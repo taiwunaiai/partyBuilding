@@ -1,0 +1,91 @@
+
+@import '~sass/color.scss';
+
+:global {
+    .Pagination {
+
+        display: block;
+        height: 32px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 14px;
+        line-height: 32px;
+
+        a,
+        span {
+            display: inline-block;
+            height: 35px;
+            width: 35px;
+            margin: 5px;
+            line-height: 35px;
+            text-align: center;
+            border: none;
+            border-bottom: 2px solid $primary;
+            vertical-align: middle;
+            background-color: white;
+            color: #3e3e3e;
+            outline: 0;
+            text-decoration: none;
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover {
+                background-color: $lightGray;
+            }
+        }
+
+        a:hover,
+        a:focus {
+            color: $primary;
+            background-color: $lightGray;
+        }
+
+        span:not(.Pagination--current):not(.Pagination--normal) {
+            font-size: 14px;
+            &:hover {
+                color: $primary;
+            }
+        }
+
+
+        .Pagination--current {
+            background-color: white;
+            border-color: $coral;
+            font-weight: normal;
+            color: $coral;
+        }
+
+        .Pagination--normal {
+            width: auto;
+            margin: 0 20px;
+            border: none;
+            color: $darkGray;
+            background: inherit;
+            cursor: default;
+            &:hover {
+                background-color: inherit;
+            }
+        }
+
+        .Pagination-next,
+        .Pagination-prev {
+            &:after { vertical-align: top; }
+        }
+    }
+
+    .Pagination.Pagination--thin {
+
+        a,
+        span {
+            height: 26px;
+            width: 26px;
+            margin: 4px;
+            font-size: 12px;
+            line-height: 26px;
+        }
+
+        .Pagination--normal {
+            margin: 0 2px;
+        }
+    }
+}

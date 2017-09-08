@@ -1,0 +1,121 @@
+
+.container{
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+	height: 280px;
+	position:relative;
+
+}
+.round{
+	background: #d0ecf7;
+	border-radius: 50% ;
+	display: block;
+	width: 30px;
+	height: 30px;
+	color: #2880fe;
+
+}
+.chart{
+	height: 280px;
+	width: 200px;
+}
+.charts{
+	position: absolute;
+	left: 0;
+	top: 0x;
+}
+.u_p3d{
+
+}
+
+.ui_base {
+    position: relative;
+    width: 300px;
+    height: 280px;
+    perspective: 1000px;
+    perspective-origin: 50% 0%;
+}
+.base{
+    position: relative;
+    width: 350px;
+    height: 280px;
+    backface-visibility: hidden;
+    animation: cir 10s linear 0s infinite;
+}
+.ball_base {
+    transform-origin: 225px 0px;
+    position: absolute;
+    left: 150px;
+    top: 142px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.ball_base:hover{
+	background: #f4c7dc;
+}
+.ball{
+	font-size: 16px;
+	margin-top: 5px;
+	margin-left: 5px;
+	transition:all 2s ease-out 0ms;
+    transform-origin: 50% 50%;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background:#cfebf6;
+	left: 0px;
+	top: 0px;
+	color: #287fff;
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+.ball:hover{
+	  color: #fff;
+      background:#ff5fff;
+}	
+.ball_c {;
+    transform-origin: 50% 50%;
+    position: absolute;
+    text-align: center;
+    left: 130px;
+    top: 145px;
+    font-size: 16px;
+}
+
+
+.ball_1 {
+    transform: translate(0px,-70px);
+}
+.ball_2 {
+     transform: translate(20px,-50px);
+}
+.ball_3 {
+    transform: rotateX(-90deg) rotateY(120deg) translateY(-70px);
+}
+.ball_4 {
+    transform: rotateX(-90deg) rotateY(180deg) translateY(-70px);
+}
+.ball_5 {
+	transform: rotateX(-90deg) rotateY(240deg) translateY(-70px);
+}
+.ball_6 {
+    transform: rotateX(-90deg) rotateY(300deg) translateY(-70px);
+}
+.detail{
+	width: 60px;
+	height: 20px; 
+	position: absolute;
+	left: 35px;
+	top: 0px;
+	background: #d3d7d6;
+	color: #848484;
+	text-align: center;
+	display: none;
+}

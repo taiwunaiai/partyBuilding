@@ -1,0 +1,179 @@
+
+@import 'color.scss';
+
+:global {
+    .Tooltip {
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &:after {
+            position: absolute;
+            line-height: 18px;
+            text-indent: 0;
+            opacity: 0;
+            z-index: 1000000;
+            pointer-events: none;
+            transition: .2s;
+        }
+
+        &:hover {
+            opacity: 1;
+            &:after,
+            &:before {
+                opacity: 1;
+            }
+        }
+
+        &:before {
+            position: absolute;
+            border: 6px solid transparent;
+            background: transparent;
+            content: "";
+        }
+
+        &:after {
+            padding: 8px 10px;
+            font-size: 12px;
+            color: #fff;
+            background: rgba(0, 0, 0, .8);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+            white-space: pre;
+            word-wrap: break-word;
+            content: attr(data-tooltip);
+            transition: .2s;
+        }
+
+    }
+
+    .Tooltip-top {
+        &:before {
+            bottom: 100%;
+            left: 10px;
+            margin: 0 0 -16px;
+            border-top-color: rgba(0, 0, 0, 0.8);
+        }
+
+        &:after {
+            bottom: 100%;
+            left: 0;
+            margin: 0 0 -6px;
+            border-radius: 200% 0 0 0;
+        }
+
+        &:hover {
+            &:before {
+                margin: 0 0 -10px;
+            }
+            &:after {
+                margin: 0 0 2px;
+                border-radius: 0;
+            }
+        }
+    }
+
+    .Tooltip-bottom {
+
+        &:before {
+            top: 100%;
+            left: 10px;
+            margin: 1px -3px 0;
+            border-bottom-color: rgba(0, 0, 0, 0.8);
+        }
+
+        &:after {
+            top: 100%;
+            left: 0;
+            margin: 12px -12px 0;
+            border-radius: 0 0 200% 0;
+        }
+
+        &:hover {
+            &:before {
+                margin: 6px -3px 0;
+            }
+            &:after {
+                margin: 18px -12px 0;
+                border-radius: 0;
+            }
+        }
+    }
+
+    .Tooltip-right {
+
+        &:before {
+            left: 110%;
+            bottom: 50%;
+            margin: 0 0 -5px 8px;
+            border-right-color: rgba(0, 0, 0, 0.8);
+        }
+
+        &:after {
+            left: 110%;
+            bottom: 50%;
+            margin: 0 0 -16px 20px;
+            border-radius: 0 200% 0 0;
+        }
+
+        &:hover {
+            &:before {
+                margin: 0 0 -5px -4px;
+            }
+            &:after {
+                margin: 0 0 -16px 8px;
+                border-radius: 0;
+            }
+        }
+    }
+
+    .Tooltip-left {
+        &:before {
+            right: 110%;
+            bottom: 50%;
+            margin: 0 19px -3px 0;
+            border-left-color: rgba(0, 0, 0, 0.8);
+        }
+
+        &:after {
+            right: 110%;
+            bottom: 50%;
+            margin: 0 31px -14px 0;
+            border-radius: 200% 0 0 0;
+        }
+
+        &:hover {
+            &:before {
+                margin: 0 7px -3px 0;
+            }
+            &:after {
+                margin: 0 19px -14px 0;
+                border-radius: 0;
+            }
+        }
+    }
+
+    span.Tooltip.Tooltip-top {
+        &:hover {
+            &:before {
+                margin-bottom: 0;
+            }
+            &:after {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1920px) {
+        .Tooltip:after {
+            padding: 6px 8px;
+        }
+
+        .Tooltip-bottom:after {
+            transform: translateX(4px);
+        }
+
+        .Tooltip-left:after {
+            transform: translateY(-2px);
+        }
+    }
+}

@@ -1,0 +1,65 @@
+
+@import '~sass/color.scss';
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #f2f2f2;
+    z-index: -1;
+    .bgimg{
+        width: 100vw;
+        height: 100vh;
+        background:url(/images/BG.png) no-repeat 0px 0px ;
+    }
+    img{
+
+    }
+}
+
+.title {
+   
+}
+
+.row {
+    display: inline-block;
+    height: 280px;
+    vertical-align: top;
+}
+.row {
+    display: inline-block;
+    height: 280px;
+    vertical-align: top;
+    margin-top: 40px; 
+}
+.wideColumn {
+    display: inline-block;
+    width: 856px;
+    margin: 0 20px;
+    vertical-align: top;
+}
+
+.content {
+    width: 1800px;
+    padding-top:110px;
+    margin: 0 auto;
+}
+
+.card {
+    height: 280px;
+    width: 432px;
+    background-color: #f2f2f2;
+}
+
+.cardThin {
+    height: 282px;
+    width: 418px;
+    background-color: #184b66;
+}
+
+.card,
+.cardThin {
+    box-shadow: 0 0 24px rgba(0,0,0,.3)
+}

@@ -1,0 +1,70 @@
+
+@import '~sass/color.scss';
+
+:global {
+    .Tree {
+        display: block;
+        color: #777;
+        padding: 12px 14px 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            position: relative;
+            margin: 0;
+            &[disabled] {
+                color: #999;
+                cursor: not-allowed;
+                p:hover { background-color: inherit; }
+            }
+
+            &:last-child {
+                &:after{ display: none }
+            }
+        }
+
+        p {
+            position: relative;
+            display: block;
+            height: 34px;
+            line-height: 34px;
+            margin: 0;
+            white-space: nowrap;
+            &:hover {
+                color: $google;
+            }
+        }
+    }
+
+    .Tree-icon--close,
+    .Tree-icon--open {
+        display: none;
+        cursor: pointer;
+    }
+
+    .Tree-node {
+        cursor: pointer;
+        margin-left: 0;
+        &.Tree-node--open > ul { display: block; }
+        &.Tree-node--close > ul { display: none; }
+
+        &.Tree-node--open > p > .Tree-icon--close,
+        &.Tree-node--close > p > .Tree-icon--open {
+            display: inline-block;
+        }
+    }
+
+    .Tree-checkbox.Checkbox {
+        padding: 1em 0 .2em 1.3em;
+
+        .Checkbox-square {
+            width: 2em;
+            overflow: initial;
+        }
+    }
+}

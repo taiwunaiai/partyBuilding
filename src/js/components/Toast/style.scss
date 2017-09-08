@@ -1,0 +1,112 @@
+
+@import '~sass/color.scss';
+
+:global {
+
+    .Toast {
+        position: fixed;
+        min-width: 300px;
+        max-width: 400px;
+        padding: 1.1em 1.5em;
+        color: #fff;
+        font-size: 13px;
+        border-radius: 1px;
+        background: #323232;
+        box-shadow: 0 0 4px rgba(0,0,0,.3);
+        z-index: 999;
+        transition: .2s;
+
+        &.Toast--top-left {
+            left: 14px;
+            top: 24px;
+        }
+
+        &.Toast--top-right {
+            right: 14px;
+            top: 24px;
+        }
+
+        &.Toast--bottom-left {
+            left: 14px;
+            bottom: 24px;
+        }
+
+        &.Toast--bottom-right {
+            right: 14px;
+            bottom: 24px;
+        }
+    }
+
+    .Toast-message {
+        word-wrap: break-word;
+    }
+
+    .Toast-message,
+    .Toast-undo {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .Toast-undo {
+        float: right;
+        margin-left: 2em;
+        color: #ff4081;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+    }
+
+    .Toast--top-left-enter,
+    .Toast--top-right-enter,
+    .Toast--bottom-left-enter,
+    .Toast--bottom-right-enter {
+        transition: .2s cubic-bezier(0.19, 0.93, 0.93, 1.33);
+    }
+
+    .Toast--top-left-enter,
+    .Toast--bottom-left-enter {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-100px);
+
+        &.Toast--top-left-enter-active,
+        &.Toast--bottom-left-enter-active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+    }
+
+    .Toast--top-right-enter,
+    .Toast--bottom-right-enter {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100px);
+
+        &.Toast--top-right-enter-active,
+        &.Toast--bottom-right-enter-active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+    }
+
+    .Toast--top-left-leave,
+    .Toast--top-right-leave,
+    .Toast--bottom-left-leave,
+    .Toast--bottom-right-leave {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        transition: .2s;
+
+        &.Toast--top-left-leave-active,
+        &.Toast--top-right-leave-active,
+        &.Toast--bottom-left-leave-active,
+        &.Toast--bottom-right-leave-active {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(.8);
+        }
+    }
+}

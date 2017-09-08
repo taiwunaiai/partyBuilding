@@ -1,0 +1,64 @@
+
+@import '~sass/color.scss';
+
+.container {
+    height: 280px;
+    width: 460px;
+    display: inline-block;
+    background-color: #fefefe;
+    vertical-align: top;
+}
+
+.title {
+    font-size: 16px;
+     height: 40px;
+    width: 460px;
+    display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    line-height: 40px;
+    background:url(/images/R-B.png) no-repeat 0px -2px;
+}
+.detail{
+    width: 448px;
+    height: 220px;
+    padding : 0 10px 20px 10px;
+    font-size: 12px;
+    img{
+        margin-top: 10px; 
+        height: 205px;
+        width: 270px;
+    }
+    p{
+
+        display: inline-block;
+        vertical-align: top;
+        height: 220px;
+        width: 150px;
+    }
+}
+
+
+.item {
+    display: inline-block;
+    
+
+   
+    &:nth-child(2) {
+        margin: 0 10px;
+    }
+
+    img {
+        height: 130px;
+        width: 108px;
+        margin-bottom: 6px;
+    }
+
+    p {
+        margin-bottom: 0;
+        color: #48d8f0;
+        font-size: 12px;
+        text-align: left;
+    }
+}
+

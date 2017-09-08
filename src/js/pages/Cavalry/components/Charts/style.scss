@@ -1,0 +1,57 @@
+
+.container {
+    position: fixed;
+    right: -450px;
+    top: 0;
+    width: 450px;
+    height: 100vh;
+    padding: 10px 10px 30px;
+    color: #1a7c93;
+    transition: .2s;
+}
+
+.conditions {
+    border-bottom: thin solid #2a92bd;
+
+    :global {
+
+        .row {
+            margin: 15px 0;
+        }
+
+        .Calendar {
+            width: 170px;
+        }
+
+        .select select {
+            border: none;
+            background: #fff;
+            font-size: 14px;
+            color: rgba(0,0,0,.75);
+        }
+
+        .select:after {
+            border-top: 5px solid rgba(0,0,0,.75);
+        }
+    }
+}
+
+.label {
+    color: #5fe3f0;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+.expand {
+    position: absolute;
+    left: -20px;
+    top: 20px;
+    width: 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    background: #3883ff;
+}

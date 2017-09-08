@@ -1,0 +1,106 @@
+
+:global {
+
+    // Some best-practice CSS that's useful for most apps
+    // Just remove them if they're not what you want
+    html {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    body {
+        background: #efefef;
+        font: 12px/1.5 'Roboto', 'Helvetica Neue',Helvetica,"\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",sans-serif,Arial,tahoma,"\5B8B\4F53";
+        font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: 300;
+    }
+
+    a,
+    a:visited,
+    a:active,
+    a:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .container-full {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .container-partBuild {
+        margin: 0 auto;
+        width: 1920px;
+        height:1080px;
+    }
+    .text-ellipsis {
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .fade {
+        transition: .2s;
+        opacity: 1;
+        visibility: visible;
+
+        &.out {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    .select {
+        position: relative;
+        display: inline-block;
+
+        select {
+            padding: 4px 24px 4px 8px;
+            margin-right: 10px;
+            font-size: 12px;
+            color: #4de7ff;
+            border: thin solid #3a8cbe;
+            border-radius: 0;
+            background: none;
+            outline: 0;
+            -webkit-appearance: none;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #3a8cbe;
+            transform: translateY(-50%);
+        }
+    }
+}
+

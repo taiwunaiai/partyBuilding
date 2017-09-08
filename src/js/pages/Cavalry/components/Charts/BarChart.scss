@@ -1,0 +1,19 @@
+
+.container {
+    height: 300px;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: #2a92bd;
+    }
+}
+
+.title {
+    margin-top: 30px;
+    color: #5fe3f0;
+    font-size: 15px;
+    font-weight: 800;
+}

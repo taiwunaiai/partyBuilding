@@ -1,0 +1,101 @@
+
+.container {
+    display: inline-block;
+    width: 200px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    height: 70px;
+}
+
+.rank {
+    max-height: calc(100vh - 70px);
+    overflow: scroll;
+}
+
+.team {
+    position: relative;
+    font-size: 12px;
+    color: #2a92bd;
+    text-align: center;
+
+    span:nth-child(2) {
+        font-size: 20px;
+        color: #5fe3f0;
+    }
+
+    .badge {
+        position: absolute;
+        top: 0;
+        left: 2px;
+        display: block;
+        height: 26px;
+        width: 18px;
+    }
+
+    img {
+        border: 3px solid #234369;
+        transition: .2s;
+    }
+
+    &:hover {
+        img {
+            border-color: #0299cc;
+        }
+    }
+}
+
+.info {
+    position: absolute;
+    padding: 5px;
+    background: #1ba9e1;
+    color: #fff;
+    border-radius: 2px;
+    top: 0;
+    z-index: 999;
+    opacity: 0;
+    transition: .2s;
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid #2bb8ed;
+    }
+
+    td {
+        padding: 4px 8px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: 19px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid #1ba9e1;
+        transform: translateY(-50%);
+    }
+}
+
+.text {
+    padding: 0 22px;
+    margin-bottom: 20px;
+    height: 32px;
+    line-height: 32px;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: #2a92bd;
+    }
+}

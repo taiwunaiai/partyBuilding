@@ -1,0 +1,95 @@
+
+@import '~sass/color.scss';
+
+.container {
+    display: inline-block;
+    width: 1150px;
+    vertical-align: top;
+    background: #fefefe;
+    margin-left: 36px; 
+    :global {
+
+        .recharts-legend-item {
+            margin: 10px 0;
+            color: #4de7ff;
+
+            span {
+                display: inline-block;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+.title {
+    width: 40px;
+    height: 280px;
+    font-size: 18px; 
+    color: #ffffff;
+    text-align: center;
+    display: inline-block;
+    background: url(/images/M-T.png);
+     ul{
+        padding: 0;
+
+    }
+    li{
+        text-align: center;
+        font-size: 16px;
+        padding: 1px 5px;
+        list-style: none;
+        height: 90px;
+        border-radius: 3px 0 0 0 ;
+
+
+    }
+}
+.detail{
+    position: relative;
+    width: 1095px;
+    height: 280px;
+    display: inline-block;
+    vertical-align: top;
+}
+.select{
+    position: absolute;
+    left: 15px;
+    top: 0px;
+    :global {
+
+      select{
+        background:#a5a5a5;
+        color: #fff;
+        border: 0px;
+      }
+      .select:after{
+        border-top: 5px solid #fefefe;
+      }
+    }
+}
+.info{
+    width: 1110px;
+    display: inline-block;
+    height: 280px;
+    font-size :14px; 
+    .rank{
+        width: 160px;
+        margin: 65px 0 0 40px;
+        display: inline-block;
+        .rankItem{
+            height: 40px;
+             p{
+                display: inline-block;
+            }
+            span{
+                margin-left: 10px; 
+                background: #eaeaea;
+                line-height: 20px;
+                text-align: center;
+                 padding:5px 10px;
+            }
+           
+        }
+    }
+    
+}

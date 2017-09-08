@@ -1,0 +1,257 @@
+
+@import '~sass/color.scss';
+
+@mixin button-shadow($rgba: rgba(0,0,0,0.2)) {
+    box-shadow: 0 10px 20px $rgba;
+}
+
+@mixin button-raised() {
+    &.Button-type--raised {
+        box-shadow: 0 3px 10px rgba(0,0,0,.23),0 3px 10px rgba(0,0,0,.16);
+        &:hover {
+            @include button-shadow();
+        }
+    }
+}
+
+@mixin button-flat($color) {
+    &.Button-type--flat {
+        background: transparent;
+        color: $color;
+        &:not(.disabled):not([disabled]):hover {
+            background-color: #efefef;
+            box-shadow: none;
+        }
+    }
+}
+
+@mixin button-outline($color: rgba(255,255,255,.8)) {
+    &.Button-type--outline {
+        border: 1px solid $color;
+        background: none;
+        color: $color;
+        background-color: none;
+        &:not(.disabled):not([disabled]):hover {
+            background-color: $color;
+            color: #fff;
+            @include button-shadow();
+        }
+    }
+}
+
+@mixin button-variation($color) {
+    @include button-raised();
+    @include button-flat($color);
+    @include button-outline($color);
+}
+
+:global {
+
+    .Button {
+        position: relative;
+        display: inline-block;
+        padding: 0 2em;
+        height: 34px;
+        line-height: 34px;
+        border: none;
+        vertical-align: middle;
+        color: rgba(255,255,255,.84);
+        text-decoration: none;
+        background: #ddd;
+        border-radius: 1px;
+        touch-action: manipulation;
+        cursor: pointer;
+        outline: 0;
+        white-space: nowrap;
+        transition: .2s;
+
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+            cursor: not-allowed;
+            opacity: .65;
+            box-shadow: none !important;
+            pointer-events: none !important;
+        }
+    }
+
+    .Button {
+
+        &.IconButton {
+            display: inline-block;
+            width: 56px;
+            height: 56px;
+            padding: 0;
+            border-radius: 56px;
+            line-height: 56px;
+            color: white;
+            cursor: pointer;
+            transition: .2s;
+            &:hover {
+                box-shadow: 0 1px 24px rgba(0,0,0,.24);
+            }
+        }
+
+        i {
+            display: inline-block;
+            margin-right: .3em;
+        }
+
+        &,
+        &-color--default {
+            &:hover {
+                @include button-shadow();
+            }
+            @include button-variation( rgba(0,0,0,.75) );
+        }
+
+        &-color--primary {
+            color: rgba(255,255,255,.84);
+            background-color: $primary;
+            @include button-variation( $primary );
+        }
+
+        &-color--success {
+            color: rgba(255,255,255,.84);
+            background-color: $success;
+            @include button-variation( $success );
+        }
+
+        &-color--info {
+            color: rgba(255,255,255,.84);
+            background-color: $info;
+            @include button-variation( $info );
+        }
+
+        &-color--warning {
+            color: rgba(255,255,255,.84);
+            background-color: $warning;
+            @include button-variation( $warning );
+        }
+
+        &-color--danger {
+            color: rgba(255,255,255,.84);
+            background-color: $error;
+            @include button-variation( $error );
+        }
+
+        &-color--google {
+            color: rgba(255,255,255,.84);
+            background-color: $google;
+            @include button-variation( $google );
+        }
+
+        &-color--twitter {
+            color: rgba(255,255,255,.84);
+            background-color: $twitter;
+            @include button-variation( $twitter );
+        }
+
+        &-color--dribbble {
+            color: rgba(255,255,255,.84);
+            background-color: $dribbble;
+            @include button-variation( $dribbble );
+        }
+
+        &-color--coral {
+            color: rgba(255,255,255,.84);
+            background-color: $coral;
+            @include button-variation( $coral );
+        }
+
+        &-color--grape {
+            color: rgba(255,255,255,.84);
+            background-color: $grape;
+            @include button-variation( $grape );
+        }
+        &-color--bittersweet {
+            color: rgba(255,255,255,.84);
+            background-color: $bittersweet;
+            @include button-variation( $bittersweet );
+        }
+        &-color--sunflower {
+            color: rgba(255,255,255,.84);
+            background-color: $sunflower;
+            @include button-variation( $sunflower );
+        }
+        &-color--grass {
+            color: rgba(255,255,255,.84);
+            background-color: $grass;
+            @include button-variation( $grass );
+        }
+        &-color--mint {
+            color: rgba(255,255,255,.84);
+            background-color: $mint;
+            @include button-variation( $mint );
+        }
+        &-color--aqua {
+            color: rgba(255,255,255,.84);
+            background-color: $aqua;
+            @include button-variation( $aqua );
+        }
+        &-color--blueJeans {
+            color: rgba(255,255,255,.84);
+            background-color: $blueJeans;
+            @include button-variation( $blueJeans );
+        }
+        &-color--lavender {
+            color: rgba(255,255,255,.84);
+            background-color: $lavender;
+            @include button-variation( $lavender );
+        }
+        &-color--pinkRose {
+            color: rgba(255,255,255,.84);
+            background-color: $pinkRose;
+            @include button-variation( $pinkRose );
+        }
+
+        &-color--lightGray {
+            color: $darkGray;
+            background-color: $lightGray;
+        }
+
+        &-color--mediumGray {
+            color: $darkGray;
+            background-color: $mediumGray;
+        }
+
+        &-color--darkGray {
+            color: $lightGray;
+            background-color: $darkGray;
+        }
+
+        &-file {
+            display: inline-block;
+            padding: 0;
+            transition: .2s;
+
+            label {
+                display: inline-block;
+                margin: 0;
+                padding: 0 20px;
+                background: 0 0;
+                cursor: pointer;
+                &:hover {
+                    box-shadow: none;
+                }
+            }
+            input {
+                &[type="file"] {
+                    display: none;
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.Button-size--lg {
+            padding: .6em 2em;
+            font-size: 1.4em;
+        }
+
+        &.Button-size--sm {
+            padding: .3em 1em;
+            font-size: .9em;
+        }
+    }
+}

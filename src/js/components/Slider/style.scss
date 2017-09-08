@@ -1,0 +1,70 @@
+
+@import '~sass/color.scss';
+
+:global {
+
+    .Slider {
+        display: inline-block;
+        width: 100%;
+        padding: 1em 0;
+
+        > div {
+            position: relative;
+            height: 2px;
+            background: $mediumGray;
+            transition: .2s;
+        }
+
+        &:hover > div {
+            background: $mediumGray2;
+        }
+    }
+
+    .Slider-line,
+    .Slider-dot {
+        position: absolute;
+        display: block;
+    }
+
+    .Slider-line {
+        left: 0;
+        top: 0;
+        height: 2px;
+        width: 0%;
+        background: $twitter;
+    }
+
+    .Slider-dot {
+        top: 50%;
+        left: 0;
+        height: 12px;
+        width: 12px;
+        border-radius: 12px;
+        background: $twitter;
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition: .2s;
+
+        &:hover {
+            height: 18px;
+            width: 18px;
+            border-radius: 18px;
+            animation: Slider-ink 2s infinite;
+        }
+    }
+
+    .Slider.dragging .Slider-dot {
+        animation: Slider-ink 2s infinite;
+    }
+}
+
+@keyframes :global(Slider-ink) {
+
+    0% {
+        box-shadow: 0 0 0 6px rgba(0, 188, 212, .1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 12px rgba(0, 100, 212, .15);
+    }
+}

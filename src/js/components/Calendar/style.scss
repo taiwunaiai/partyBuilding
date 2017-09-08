@@ -1,0 +1,292 @@
+
+@import '~sass/color.scss';
+
+:global {
+
+    .Calendar {
+        position: relative;
+        display: inline-block;
+        outline: none;
+
+        .Calendar-year-prev,
+        .Calendar-year-next,
+        .Calendar-month-prev,
+        .Calendar-month-next {
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            transform: translateY(-50%);
+            transition: .2s;
+            &:hover { color: $dribbble; }
+        }
+
+        .Calendar-year-prev {
+            left: 14px;
+        }
+
+        .Calendar-year-next {
+            right: 14px;
+        }
+
+        .Calendar-month-prev {
+            left: 40px;
+        }
+
+        .Calendar-month-next {
+            right: 40px;
+        }
+
+        i {
+            cursor: pointer;
+        }
+    }
+
+    .Calendar-container {
+        position: absolute;
+        right: 0;
+        width: 275px;
+        outline: 0;
+        opacity: 0;
+        box-shadow: 0 0 4px rgba(0,0,0,.3);
+        visibility: hidden;
+        user-select: none;
+        z-index: 999;
+        transition: .2s;
+        transform: scale(.6);
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+    }
+
+    /** Action bar */
+    .Calendar-action {
+        position: relative;
+        padding: 10px;
+        color: #fff;
+        text-align: center;
+        box-shadow: 0 1px 5px rgba(0,0,0,.2);
+        background-color: $google;
+    }
+
+    /** Show the current date */
+    .Calendar-date {
+        height: 50px;
+        font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', Roboto, Arial, Sans-serif;
+        font-size: 14px;
+        line-height: 50px;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+            color: $dribbble;
+        }
+    }
+
+    /** Parent of the 'md-calendar-days' */
+    .Calendar-content {
+        position: relative;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    /** Days of the week */
+    .Calendar-header {
+        background-color: #eaf4f8;
+        & > div {
+            display: inline-block;
+            width: 38px;
+            font-size: 12px;
+            line-height: 38px;
+            text-align: center;
+        }
+    }
+
+    /** Container of the day */
+    .Calendar-days {
+        position: relative;
+        display: inline-block;
+        width: 275px;
+        vertical-align: top;
+        background-color: #fff;
+        text-align: center;
+        overflow: hidden;
+    }
+    .Calendar-dates,
+    .Calendar-dates-prev,
+    .Calendar-dates-next {
+        width: 266px;
+        margin: 0 auto;
+        padding-bottom: 5px;
+    }
+    .Calendar-dates-next,
+    .Calendar-dates-prev {
+        position: absolute;
+        left: 100%;
+        top: 38px;
+        background-color: #fff;
+    }
+    .Calendar-dates-next {
+        left: 100%;
+        z-index: 1;
+    }
+    .Calendar-dates-prev {
+        left: -100%;
+        z-index: 2;
+    }
+
+    /** Style of the day */
+    .Calendar-day {
+        position: relative;
+        display: inline-block;
+        width: 38px;
+        line-height: 38px;
+        text-align: center;
+        color: #313131;
+        cursor: pointer;
+        border-radius: 38px;
+        z-index: 1;
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 38px;
+            height: 38px;
+            border-radius: 38px;
+            background-color: #deeef7;
+            z-index: -1;
+            content: "";
+            transform: scale(0);
+            transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        }
+
+        &:hover {
+            color: $darkGray;
+            &:before { transform: scale(.8); }
+        }
+
+    }
+    .Calendar-day--adjacent { color: rgba(0,0,0,.26); }
+    .Calendar-day--current,
+    .Calendar-day--today { color: #fff; }
+    .Calendar-day--current:before {
+        background-color: #83d8b6 !important;
+        transform: scale(.8);
+    }
+    .Calendar-day--today:before {
+        background-color: $google;
+        transform: scale(.8);
+    }
+    .Calendar-day--valid:after {
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: $aqua;
+        content: "";
+    }
+    .Calendar-day--invalid {
+        color: rgba(0,0,0,.26);
+        cursor: not-allowed;
+        &:hover:before { transform: scale(0); }
+        &.Calendar-day--adjacent { cursor: default; }
+    }
+
+    /** Double month */
+    .Calendar--double {
+        width: 540px;
+
+        .Calendar-days,
+        .Calendar-dates,
+        .Calendar-dates-prev,
+        .Calendar-dates-next { width: 266px; }
+
+        .Calendar-header > div {
+            height: 38px;
+            width: 38px;
+            line-height: 38px;
+        }
+
+        .Calendar-day {
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            border-radius: 38px;
+
+            &:before {
+                width: 38px;
+                height: 38px;
+            }
+
+            &:after {
+                bottom: 8px;
+                right: 8px;
+            }
+        }
+
+        .Calendar-date { font-size: 16px; }
+    }
+
+    @media screen and (max-width: 1440px) {
+
+        .Calendar-header {
+            & > div {
+                width: 32px;
+                font-size: 12px;
+                line-height: 32px;
+            }
+        }
+
+        .Calendar-action {
+            padding: 4px;
+        }
+
+        .Calendar-dates-next,
+        .Calendar-dates-prev {
+            top: 32px;
+        }
+
+        .Calendar-day {
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            border-radius: 32px;
+
+            &:before {
+                width: 32px;
+                height: 32px;
+                border-radius: 32px;
+            }
+        }
+
+        .Calendar-container,
+        .Calendar-days {
+            width: 233px;
+        }
+
+        .Calendar-dates,
+        .Calendar-dates-prev,
+        .Calendar-dates-next {
+            width: 224px;
+        }
+
+        .Calendar-date {
+            font-size: 14px;
+        }
+    }
+
+    .Calendar--flat {
+        .TextField--icon--right .TextField-input {
+            border: 0;
+            background: #fbfbfb;
+            box-shadow: 0 0 2px rgba(0,0,0,.2);
+        }
+    }
+}

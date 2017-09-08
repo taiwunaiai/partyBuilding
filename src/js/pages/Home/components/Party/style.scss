@@ -1,0 +1,160 @@
+
+.container {
+    width: 800px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 36px;
+    position: relative;
+    :global {
+
+        .recharts-legend-item-text {
+            color: #3fa9d0;
+            font-size: 10px;
+        }
+
+        .recharts-cartesian-axis-label {
+            transform: translateY(-7px);
+            .recharts-text {
+                fill: #4de7ff;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.title {
+    font-size: 16px;
+    line-height: 40px;
+    background: #ccc;
+}
+.subTitle{
+    height: 40px;
+    width: 266px;
+    display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    &:nth-child(2){
+        background:#bcbcbc;
+        border-left : 1px solid #fff;
+        border-right: 1px solid #fff;
+    }
+}
+
+.title {
+    height: 40px;
+    line-height: 30px;
+    color: #fff;
+    background: #ccc;
+}
+
+.detail{
+    height: 240px;
+    position: relative;
+}
+
+.item{
+    height: 240px;
+    width: 720px;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    &:nth-child(2){
+        display: none;
+    }
+    &:nth-child(3){
+        display: none;
+    }
+}
+.life{
+    height: 240px;
+
+}
+.month{
+    height: 75px;
+    width: 720px;
+    position: absolute;
+    left: 0px;
+    top: 45px;
+    .monthIcon{
+        width: 25px;
+        height: 30px;
+        text-align: center;
+        line-height: 27px;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 60px;
+        color: #fff;
+        cursor: pointer;
+        &:nth-child(1){
+            margin-left: 10px;
+        }
+         &:nth-child(5){
+            margin-left: 140px;
+        }
+    }
+}
+.img{
+    position: relative;
+    height: 75px;
+    width: 720px;
+    border-bottom:2px dashed  #cccccc ; 
+    overflow: hidden;
+}
+.linebottom{
+    padding-top: 10px;
+    height: 75px;
+    width: 720px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s;
+    img {
+        height: 40px;
+        width: 50px;
+        margin-left: 30px; 
+        cursor: pointer;
+    }
+}
+.info{
+    width: 720px;
+    height: 140px;
+    padding-top: 20px;
+    img {
+        height: 110px;
+        width: 167px;
+        border: 2px solid #ccc;
+        margin-left: 13px; 
+        cursor: pointer;
+    }
+    p{
+        display: inline-block;
+        vertical-align: top;
+        height: 120px;
+        width: 340px;
+        margin-left: 10px; 
+    }
+}
+.leftIcon{
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 100px;
+    background: url(/images/M-M1-1.png) no-repeat 0px 0px;
+    cursor: pointer;
+    z-index: 1;
+}
+.rightIcon{
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 100px;
+     background: url(/images/M-M1.png) no-repeat 0px 0px;
+    cursor: pointer;
+    z-index: 1;
+}
